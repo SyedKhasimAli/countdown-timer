@@ -1,0 +1,35 @@
+<html><head></head>
+<body>
+    Enter limit:<input type="text" id="inp"/>
+    <button onclick="set()">Click</button>
+    <p id="on"> </p>
+</body>
+<script>
+    function set(){
+       
+    let start=document.getElementById("inp").value;
+    let time= Number(start)*60;
+    // let co=document.getElementById("on")
+    setInterval(up,1000)
+    function up(){
+        let min=Math.floor(time/60);
+let sec=time%60;
+// sec=sec<=9?'0'+sec:sec 
+if(sec<10){
+    sec='0'+sec
+
+}else{
+    sec=sec
+}
+document.getElementById("on").innerHTML=`${min}: ${sec}`
+time--;
+if(time==0){
+    
+    alert("Time finished");
+    
+    window.location.reload();
+}
+   }
+}
+</script>
+</html>
